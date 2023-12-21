@@ -1,4 +1,4 @@
-package com.luv2code.demosecurity;
+package com.luv2code.demosecurity.secutiry;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -47,7 +47,10 @@ public class DemoSecurityConfig {
                                     .loginPage("/showMyLoginPage")
                                     .loginProcessingUrl("/authenticateTheUser")
                                     .permitAll()
-                            );
+                            )
+                    .logout(logout -> logout.permitAll()
+                    );
+
 
             return http.build();
         }
